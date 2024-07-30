@@ -1,0 +1,33 @@
+.about {
+  background-color: black;
+  padding: 50px;
+}
+.title {
+  max-width: 45%;
+}
+main {
+  margin-top: 100px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.left-section img {
+  width: 70%;
+  height: auto;
+  min-width: 250px;
+}
+.info-list {
+  list-style-type: none;
+  padding: 0;
+}
+.info-section {
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+.icon {
+  float: left;
+  margin-right: 20px;
+}

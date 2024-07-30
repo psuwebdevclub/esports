@@ -1,0 +1,11 @@
+.merch {
+  background-color: #000000;
+  max-height: 100vh;
+}
+
+.top {
+  border-radius: 120px;
+  color: black;
+  background-color: white;
+  padding: 50px;
+}

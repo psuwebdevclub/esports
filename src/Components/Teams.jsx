@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Teams.css";
 import apexBanner from "/apex_banner.jpg";
+import { AiFillCaretDown } from "react-icons/ai";
 const Teams = () => {
   const games = [
     { name: "Apex Legends", id: 1, imageSrc: apexBanner, teamInfo: "" },
@@ -41,13 +42,16 @@ const Teams = () => {
         </button>
       </section>
       <section className="right-section">
-        <ul className="game-list">
-          {games.map((game) => (
-            <li key={game.id} className="game-item">
-              <img src={game.imageSrc} alt={game.name} />
-            </li>
-          ))}
-        </ul>
+        <div>
+          <ul className="game-list">
+            {games.map((game) => (
+              <li key={game.id} className="game-item">
+                <img src={game.imageSrc} alt={game.name} />
+              </li>
+            ))}
+          </ul>
+          <AiFillCaretDown className="down-arrow" />
+        </div>
       </section>
     </div>
   );
