@@ -1,11 +1,51 @@
 .merch {
   background-color: #000000;
-  max-height: 100vh;
 }
 
 .top {
   border-radius: 120px;
   color: black;
   background-color: white;
+  padding: 70px;
+  padding-bottom: 90px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: row wrap;
+  position: relative;
+}
+.top .right-section img {
+  position: absolute;
+  max-width: 60vh;
+  top: 0;
+  height: auto;
+}
+.bottom {
+  display: flex;
+  justify-content: center;
   padding: 50px;
+  margin-top: 150px;
+  flex-flow: row wrap;
+}
+.bottom h1 {
+  position: relative;
+  top: 20%;
+}
+.merch img {
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .bottom h1 {
+    top: 0;
+  }
+  .bottom img {
+    width: 100%;
+    height: auto;
+  }
+  .top {
+    display: block;
+  }
+  .top .right-section img {
+    position: relative;
+    width: 100%;
+  }
 }

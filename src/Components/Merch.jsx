@@ -1,19 +1,42 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Merch.css";
-import { AiFillTrophy, AiOutlineCloseCircle } from "react-icons/ai";
-
-import aboutImage from "/about_image.png";
+import jersey from "/jersey.png";
+import banner from "/banner.png";
 const Merch = () => {
   return (
     <div className="merch">
       <div className="top">
         <div className="left-section">
-          <div className="solicitation">
-            <h1 className="syncopate-bold">MERCH</h1>
-            <h3>YOU HAVE A LEGAL OBLIGATION TO BUY</h3>
-          </div>
+          <h1 className="syncopate-bold">MERCH</h1>
+          <h2>YOU HAVE A LEGAL OBLIGATION TO BUY</h2>
         </div>
-        <div className="right-section"></div>
+        <div className="right-section">
+          <img
+            src={jersey}
+            alt="Jersey"
+            onClick={() => {
+              window.open(
+                "https://esportsgear.com/products/esports-at-penn-state-jersey"
+              );
+            }}
+          />
+        </div>
+      </div>
+      <div className="bottom">
+        <div className="left-section">
+          <img
+            src={banner}
+            alt="Banner"
+            onClick={() => {
+              window.open(
+                "https://esportsgear.com/products/psu-esports-street-gear-sublimated-flag"
+              );
+            }}
+          />
+        </div>
+        <div className="right-section">
+          <h1 className="syncopate-bold">WEAR WITH PRIDE</h1>
+        </div>
       </div>
     </div>
   );

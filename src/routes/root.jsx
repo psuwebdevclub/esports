@@ -3,6 +3,7 @@ import "./root.css";
 import Teams from "../Components/Teams";
 import About from "../Components/About";
 import Merch from "../Components/Merch";
+import Footer from "../Components/Footer";
 
 function Root() {
   return (
@@ -14,6 +15,7 @@ function Root() {
       <Teams />
       <About />
       <Merch />
+      <Footer />
     </>
   );
 }

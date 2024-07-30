@@ -1,0 +1,12 @@
+.footer {
+  color: white;
+  background-color: black;
+  padding: 50px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  cursor: pointer;
+}

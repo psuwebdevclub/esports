@@ -2,9 +2,7 @@
   background-color: black;
   padding: 50px;
 }
-.title {
-  max-width: 45%;
-}
+
 main {
   margin-top: 100px;
   display: flex;
@@ -13,7 +11,7 @@ main {
 .left-section img {
   width: 70%;
   height: auto;
-  min-width: 250px;
+  min-width: 300px;
 }
 .info-list {
   list-style-type: none;

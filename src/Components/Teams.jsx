@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Teams.css";
 import apexBanner from "/apex_banner.jpg";
 import { AiFillCaretDown } from "react-icons/ai";
+
 const Teams = () => {
   const games = [
     { name: "Apex Legends", id: 1, imageSrc: apexBanner, teamInfo: "" },
@@ -30,19 +31,27 @@ const Teams = () => {
     { name: "Mortal Kombat", id: 19, imageSrc: apexBanner, teamInfo: "" },
     { name: "Street Fighter", id: 20, imageSrc: apexBanner, teamInfo: "" },
   ];
+
+  const scrollContainerRef = useRef(null);
+
+  const handleScrollDown = () => {
+    scrollContainerRef.current.scrollBy({
+      top: 100, //not working
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="teams">
       <section className="left-section">
         <h1 className="syncopate-bold">TEAMS</h1>
-
         <p>SELECT A GAME TO LEARN MORE ABOUT THE TEAM</p>
-
         <button id="newTeam" className="action-button">
           START A NEW TEAM
         </button>
       </section>
       <section className="right-section">
-        <div>
+        <div ref={scrollContainerRef} className="game-list-container">
           <ul className="game-list">
             {games.map((game) => (
               <li key={game.id} className="game-item">
@@ -50,8 +59,8 @@ const Teams = () => {
               </li>
             ))}
           </ul>
-          <AiFillCaretDown className="down-arrow" />
         </div>
+        <AiFillCaretDown className="down-arrow" onClick={handleScrollDown} />
       </section>
     </div>
   );
