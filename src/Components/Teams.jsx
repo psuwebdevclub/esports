@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Teams.css";
 import apexBanner from "/apex_banner.jpg";
 import { AiFillCaretDown } from "react-icons/ai";
-
+import FadeInText from "./FadeInText";
 const Teams = () => {
   const games = [
     { name: "Apex Legends", id: 1, imageSrc: apexBanner, teamInfo: "" },
@@ -44,11 +44,13 @@ const Teams = () => {
   return (
     <div className="teams">
       <section className="left-section">
-        <h1 className="syncopate-bold">TEAMS</h1>
-        <p>SELECT A GAME TO LEARN MORE ABOUT THE TEAM</p>
-        <button id="newTeam" className="action-button">
-          START A NEW TEAM
-        </button>
+        <FadeInText>
+          <h1 className="syncopate-bold">TEAMS</h1>
+          <p>SELECT A GAME TO LEARN MORE ABOUT THE TEAM</p>
+          <button id="newTeam" className="action-button">
+            START A NEW TEAM
+          </button>
+        </FadeInText>
       </section>
       <section className="right-section">
         <div ref={scrollContainerRef} className="game-list-container">

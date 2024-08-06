@@ -1,21 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./About.css";
 import { AiFillTrophy, AiOutlineCloseCircle } from "react-icons/ai";
+import FadeInText from "./FadeInText";
+import CountUpNumber from "./CountUpNumber";
 
 import aboutImage from "/about_image.png";
 const About = () => {
   return (
     <div className="about">
       <div className="title">
-        <h1 className="syncopate-bold">WHAT WE DO</h1>
-        <p>
-          SOMETHING COOL HISTORY STUFF BLAH BLAH BLAH BLAH MORE STUFF HERE YADA
-          YADA
-        </p>
+        <FadeInText>
+          <h1 className="syncopate-bold">WHAT WE DO</h1>
+          <p>
+            SOMETHING COOL HISTORY STUFF BLAH BLAH BLAH BLAH MORE STUFF HERE
+            YADA YADA
+          </p>
+        </FadeInText>
       </div>
       <main>
         <div className="left-section">
-          <img src={aboutImage} alt="About" />
+          <FadeInText>
+            <img src={aboutImage} alt="About" />
+          </FadeInText>
         </div>
         <div className="right-section">
           <ul className="info-list">
@@ -23,7 +29,7 @@ const About = () => {
               <div className="info-section">
                 <div>
                   <h2 className="syncopate-bold">
-                    3423+
+                    <CountUpNumber endValue={3242} prefix="" />+
                     <AiFillTrophy className="icon" />
                   </h2>
                   <p>WINS</p>
@@ -31,7 +37,7 @@ const About = () => {
                 <div>
                   <h2 className="syncopate-bold">
                     <AiOutlineCloseCircle className="icon" />
-                    3.34
+                    <CountUpNumber endValue={3.34} prefix="" />
                   </h2>
                   <p>K/D</p>
                 </div>
@@ -42,14 +48,14 @@ const About = () => {
                 <div>
                   <h2 className="syncopate-bold">
                     <AiFillTrophy className="icon" />
-                    3423+
+                    <CountUpNumber endValue={3242} prefix="" />+
                   </h2>
                   <p>WINS</p>
                 </div>
                 <div>
                   <h2 className="syncopate-bold">
                     <AiOutlineCloseCircle className="icon" />
-                    3.34
+                    <CountUpNumber endValue={3.34} prefix="" />
                   </h2>
                   <p>K/D</p>
                 </div>
