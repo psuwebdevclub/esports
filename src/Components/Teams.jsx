@@ -1,42 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Teams.css";
-import apexBanner from "/apex_banner.jpg";
 import { AiFillCaretDown } from "react-icons/ai";
 import FadeInText from "./FadeInText";
-const Teams = () => {
-  const games = [
-    { name: "Apex Legends", id: 1, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Valorant", id: 2, imageSrc: apexBanner, teamInfo: "" },
-    { name: "League of Legends", id: 3, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Overwatch", id: 4, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Call of Duty", id: 5, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Fortnite", id: 6, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Rainbow Six Siege", id: 7, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Rocket League", id: 8, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Hearthstone", id: 9, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Smite", id: 10, imageSrc: apexBanner, teamInfo: "" },
-    { name: "World of Warcraft", id: 11, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Dota 2", id: 12, imageSrc: apexBanner, teamInfo: "" },
-    {
-      name: "Counter-Strike: Global Offensive",
-      id: 13,
-      imageSrc: apexBanner,
-      teamInfo: "",
-    },
-    { name: "PUBG", id: 14, imageSrc: apexBanner, teamInfo: "" },
-    { name: "FIFA", id: 15, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Madden", id: 16, imageSrc: apexBanner, teamInfo: "" },
-    { name: "NBA 2K", id: 17, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Super Smash Bros", id: 18, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Mortal Kombat", id: 19, imageSrc: apexBanner, teamInfo: "" },
-    { name: "Street Fighter", id: 20, imageSrc: apexBanner, teamInfo: "" },
-  ];
 
+const Teams = () => {
+  const [games, setGames] = useState([]);
   const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    const fetchGames = async () => {
+      try {
+        const response = await fetch('https://psuesports.pythonanywhere.com/games/');
+        const data = await response.json();
+        setGames(data);
+      } catch (error) {
+        console.error('Error fetching games:', error);
+      }
+    };
+
+    fetchGames();
+  }, []);
 
   const handleScrollDown = () => {
     scrollContainerRef.current.scrollBy({
-      top: 100, //not working
+      top: 100,
       behavior: "smooth",
     });
   };
@@ -55,9 +42,9 @@ const Teams = () => {
       <section className="right-section">
         <div ref={scrollContainerRef} className="game-list-container">
           <ul className="game-list">
-            {games.map((game) => (
-              <li key={game.id} className="game-item">
-                <img src={game.imageSrc} alt={game.name} />
+            {games.map((game, index) => (
+              <li key={index} className="game-item">
+                <img src={game.image} alt={game.name} />
               </li>
             ))}
           </ul>
